@@ -10,7 +10,7 @@
 #
 # copy pdf to OUTPUT_DOC_DIR
 #
-OUTPUT_DOC_DIR=.
+OUTPUT_DOC_DIR=`pwd`
 
 CMD="xelatex -halt-on-error "
 
