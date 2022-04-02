@@ -1,0 +1,184 @@
+
+\subsubsection{formula | \$ xxx \$}
+
+\begin{enumerate}[topsep=0pt,itemsep=0pt,parsep=0pt,leftmargin=3.6em,label=\arabic*>]
+    \item {\color{teal}\verb!$a \dots b$!} => $a \dots b$
+    \item {\color{teal}\verb!$a \vdots b$!} => $a \vdots b$
+    \item {\color{teal}\verb!$a \ddots b$!} => $a \ddots b$
+    \item {\color{teal}\verb!$\{aaa\}$!} => $\{aaa\}$
+    \item {\color{teal}\verb!$[aaa]$!} => $[aaa]$
+    %\item {\color{teal}\verb!$a \iddots b$!} => $a \iddots b$
+\end{enumerate}
+
+\paragraph{上标/下标}~{}
+
+\begin{enumerate}[topsep=0pt,itemsep=0pt,parsep=0pt,leftmargin=3.6em,label=\arabic*>]
+    \item {\color{teal}\verb!$x_{1}$!} => $x_{1}$
+    \item {\color{teal}\verb!$x^{2}$!} => $x^{2}$
+    \item {\color{teal}\verb!$A_{ij} = 2^{i+j}$!} => $A_{ij} = 2^{i+j}$
+    \item {\color{teal}\verb!$A\prime$!} => $A\prime$
+    \item {\color{teal}\verb!$A'$!} => $A'$
+    \item {\color{teal}\verb!$A''$!} => $A''$
+    \item {\color{teal}\verb!$A = 90^\circ$!} => $A = 90^\circ$
+    \item {\color{teal}\verb!$\max_n f(n)$!} => $\max_n f(n)$
+    \item {\color{teal}\verb!$A_m{}^n$!} => $A_m{}^n$
+    \item {\color{teal}\verb!$\int_0^1 f(t)$!} => $\int_0^1 f(t)$
+    \item {\color{teal}\verb!$\iint_0^1 f(t)$!} => $\iint_0^1 f(t)$
+    \item {\color{teal}\verb!$\int_0^1 f(t)dt$!} => $\int_0^1 f(t)dt$
+    \item {\color{teal}\verb!$\iint_0^1 g(x, y)dxdy$!} => $\iint_0^1 g(x, y)dxdy$
+    \item {\color{teal}\verb!$\int_0^1 f(t)\mathrm{d}t$!} => $\int_0^1 f(t)\mathrm{d}t$
+    \item {\color{teal}\verb!$\vec x = \overrightarrow{AB}$!} => $\vec x = \overrightarrow{AB}$
+
+    \item {\color{teal}\verb!$\overset{*}{X}$!} => $\overset{*}{X}$ {\color{red}|} 
+          {\color{teal}\verb!$\underset{*}{X}$!} => $\underset{*}{X}$ {\color{red}|} 
+          {\color{teal}\verb!$\underset{m}{X}$!} => $\underset{m}{X}$
+    \item {\color{teal}\verb!\[\max_n f(n)\]!} => \[\max_n f(n)\]
+\end{enumerate}
+
+\paragraph{分式}~{}
+
+\begin{enumerate}[topsep=0pt,itemsep=0pt,parsep=0pt,leftmargin=3.6em,label=\arabic*>]
+    \item {\color{teal}\verb!$\frac 12 + \frac 1a = \frac{2+a}{2a}$!} => $\frac 12 + \frac 1a = \frac{2+a}{2a}$
+    \item {\color{teal}\verb!\[\tfrac 12 f(x) = \frac{1}{\dfrac 1a + \dfrac 1b + c}\]!} 
+        => \[\tfrac 12 f(x) = \frac{1}{\dfrac 1a + \dfrac 1b + c}\] \par
+        {\color{teal}\verb!\dfrac!} : display style, looks smaller \par
+        {\color{teal}\verb!\tfrac!} : text style, looks normal
+\end{enumerate}
+
+\paragraph{根式}~{}
+
+\begin{enumerate}[topsep=0pt,itemsep=0pt,parsep=0pt,leftmargin=3.6em,label=\arabic*>]
+    \item {\color{teal}\verb!$\sqrt 4 = \sqrt[3]{8} = 2$!} => $\sqrt 4 = \sqrt[3]{8} = 2$
+\end{enumerate}
+
+\paragraph{inline formula : 行内公式}~{}
+
+行内公式是嵌在文本中的，其输入可以有三种方式：
+
+\begin{enumerate}[topsep=0pt,itemsep=0pt,parsep=0pt,leftmargin=3.6em,label=\arabic*>]
+    \item \$ \emph{formula} \$ \par
+        {\color{DefinedColorGreen}\$ a + b > c \$} 
+        $\Rightarrow$ % =>
+        {\color{DefinedColorRed}$a + b > c$}
+    \item \textbackslash( \emph{formula} \textbackslash) \par
+        {\color{DefinedColorGreen}\textbackslash( a + b > c \textbackslash)} 
+        $\Rightarrow$ % =>
+        {\color{DefinedColorRed}\(a + b > c\)}
+    \item \textbackslash begin\{math\} \emph{formula} \textbackslash end\{math\} \par
+        {\color{DefinedColorGreen} \textbackslash begin\{math\} a + b > c \textbackslash end\{math\}} 
+        $\Rightarrow$ % =>
+        {\color{DefinedColorRed}\begin{math} a + b > c \end{math} }
+\end{enumerate}
+
+\paragraph{line formula : 行间公式}~{}
+
+行间公式是单独占据一行居中显示，其输入也有三种：
+\begin{enumerate}[topsep=0pt,itemsep=0pt,parsep=0pt,leftmargin=3.6em,label=\arabic*>]
+    \item {\color{teal}\verb!\[\max_n f(n)\]!} => \[\max_n f(n)\]
+\end{enumerate}
+
+\paragraph{matrix}~{}
+
+matrix 环境共有以下几种：
+
+\begin{enumerate}[topsep=0pt,itemsep=0pt,parsep=0pt,leftmargin=3.6em,label=\arabic*>]
+    \item matrix
+    \item bmatrix
+    \item vmatrix
+    \item pmatrix
+    \item Bmatrix
+    \item Vmatrix
+\end{enumerate}
+
+\[ A_{\mathrm{matrix}} = 
+\begin{matrix}
+    a_{11} & a_{12} & a_{13} \\
+    a_{21} & a_{22} & a_{23} \\
+    a_{31} & a_{32} & a_{33}
+\end{matrix}
+\]
+
+\[ A_{\mathrm{bmatrix}} = 
+\begin{bmatrix}
+    a_{11} & a_{12} & a_{13} \\
+    a_{21} & a_{22} & a_{23} \\
+    a_{31} & a_{32} & a_{33}
+\end{bmatrix}
+\]
+
+\[ A_{\mathrm{vmatrix}} = 
+\begin{vmatrix}
+    a_{11} & a_{12} & a_{13} \\
+    a_{21} & a_{22} & a_{23} \\
+    a_{31} & a_{32} & a_{33}
+\end{vmatrix}
+\]
+
+\[ A_{\mathrm{pmatrix}} = 
+\begin{pmatrix}
+    a_{11} & a_{12} & a_{13} \\
+    a_{21} & a_{22} & a_{23} \\
+    a_{31} & a_{32} & a_{33}
+\end{pmatrix}
+\]
+
+\[ A_{\mathrm{Vmatrix}} = 
+\begin{Vmatrix}
+    a_{11} & a_{12} & a_{13} \\
+    a_{21} & a_{22} & a_{23} \\
+    a_{31} & a_{32} & a_{33}
+\end{Vmatrix}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{lstlisting}[language={python}]
+\[ A_{\mathrm{matrix}} = 
+\begin{matrix}
+    a_{11} & a_{12} & a_{13} \\
+    a_{21} & a_{22} & a_{23} \\
+    a_{31} & a_{32} & a_{33}
+\end{matrix}
+\]
+\end{lstlisting}
+
+\begin{lstlisting}[language={python}]
+\[ A_{\mathrm{bmatrix}} = 
+\begin{bmatrix}
+    a_{11} & a_{12} & a_{13} \\
+    a_{21} & a_{22} & a_{23} \\
+    a_{31} & a_{32} & a_{33}
+\end{bmatrix}
+\]
+\end{lstlisting}
+
+\begin{lstlisting}[language={python}]
+\[ A_{\mathrm{vmatrix}} = 
+\begin{vmatrix}
+    a_{11} & a_{12} & a_{13} \\
+    a_{21} & a_{22} & a_{23} \\
+    a_{31} & a_{32} & a_{33}
+\end{vmatrix}
+\]
+\end{lstlisting}
+
+\begin{lstlisting}[language={python}]
+\[ A_{\mathrm{pmatrix}} = 
+\begin{pmatrix}
+    a_{11} & a_{12} & a_{13} \\
+    a_{21} & a_{22} & a_{23} \\
+    a_{31} & a_{32} & a_{33}
+\end{pmatrix}
+\]
+\end{lstlisting}
+
+\begin{lstlisting}[language={python}]
+\[ A_{\mathrm{Vmatrix}} = 
+\begin{Vmatrix}
+    a_{11} & a_{12} & a_{13} \\
+    a_{21} & a_{22} & a_{23} \\
+    a_{31} & a_{32} & a_{33}
+\end{Vmatrix}
+\]
+\end{lstlisting}
+

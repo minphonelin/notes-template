@@ -1,0 +1,72 @@
+
+\subsubsection{font set}
+
+在 linux 中 latex 字体如果想使用 win 的字体，需要先把 win 的字体拷贝到 linux 中，具体操作可以参考 
+\ref{sec:use-win-font-in-ubuntu}
+
+在导言区设置如下，就可以使用 win 的字体：
+\begin{lstlisting}[language={matlab}]
+\usepackage{fontspec}
+%\setmainfont{Times New Roman}   % 这些字体可以用 fc`-`list 中查看名字
+\setmainfont{Calibri}
+\setsansfont{Verdana}
+%\setmonofont{Courier New}
+%\setmonofont{Consolas}
+\end{lstlisting}
+
+\begin{lstlisting}[language={sh}]
+minphone@mcp:~$fc`-`list
+/usr/share/fonts/windows_fonts/BROADW.TTF: `\textcolor{red}{Broadway}`:style=Regular,obyčejné
+/usr/share/fonts/windows_fonts/consola.ttf: `\textcolor{red}{Consolas}`:style=Regular
+/usr/share/fonts/windows_fonts/constanb.ttf: `\textcolor{red}{Constantia}`:style=Bold
+/usr/share/fonts/windows_fonts/ONYX.TTF: `\textcolor{red}{Onyx}`:style=Regular,obyčejné
+\end{lstlisting}
+
+{\color{red}按以下方式来使用字体：}
+\begin{enumerate}[topsep=0pt,itemsep=0pt,parsep=0pt,leftmargin=3.6em,label=\arabic*>]
+    \item \{\textbackslash fontspec\{Microsoft YaHei Light\} 微软雅黑 Light\}：
+        {\fontspec{Microsoft YaHei Light}微软雅黑 Light}  % for win-font
+    \item \{\textbackslash fontspec\{YouYuan\} 幼圆\}：{\fontspec{YouYuan}幼圆}  % for win-font
+    \item \{\textbackslash fontspec\{Comic Sans MS\} Comic Sans MS\}：{\fontspec{Comic Sans MS}Comic Sans MS}  % for win-font
+    \item \{\textbackslash small\textbackslash fontspec\{Comic Sans MS\} Comic Sans MS\}
+        {\small\fontspec{Comic Sans MS}Comic Sans MS}  % for win-font
+
+    \item \{\textbackslash fontsize\{8pt\}\{0\}\textbackslash fontspec\{Comic Sans MS\} Comic Sans MS\}
+        {\fontsize{8pt}{0}\fontspec{Comic Sans MS}Comic Sans MS}  % for win-font
+
+    \item \{\textbackslash small\textbackslash fontspec\{Consolas\} Consolas\}：
+        {\small\fontspec{Consolas}Consolas}  % for win-font
+        | small {\color{teal}就是小五号}
+    \item \verb=\textup{upright shape}= : \textup{upright shape}
+    \item \verb=\textit{italic shape}= : \textit{italic shape}
+    \item \verb=\textsl{slanted shape}= : \textsl{slanted shape}
+    \item \verb=\textsc{small capitals shape}= : \textsc{small capticals shape}
+    \item \verb=\textbf{apple}= : \textbf{apple}
+\end{enumerate}
+
+\paragraph{set font size}~{}
+
+\begin{enumerate}[topsep=0pt,itemsep=0pt,parsep=0pt,leftmargin=3.6em,label=\arabic*>]
+    \item \verb=\tiny{Text}= : {\tiny{Text}}
+    \item \verb=\small{Text}= : {\small{Text}}
+    \item \verb=\normalsize{Text}= : {\normalsize{Text}}
+    \item \verb=\large{Text}= : {\large{Text}}
+    \item \verb=\huge{Text}= : {\huge{Text}}
+    \item \verb={\fontsize{8pt}{0}Text}= : {\fontsize{8pt}{0}Text}
+\end{enumerate}
+
+各个字号的榜值 : \url{https://blog.csdn.net/weixin_39679367/article/details/115794548}
+
+\paragraph{font style of math}~{}
+
+\begin{enumerate}[topsep=0pt,itemsep=0pt,parsep=0pt,leftmargin=3.6em,label=\arabic*>]
+    \item \verb=$\mathnormal{ABCDEF, abcdef, 123456}$= : {$\mathnormal{ABCDEF, abcdef, 123456}$}
+    \item \verb=$\mathnormal{123456}$= : {$\mathnormal{123456}$}
+    \item \verb=$\mathrm{ABCDEF, abcdef, 123456}$= : {$\mathrm{ABCDEF, abcdef, 123456}$}
+    \item \verb=$\mathit{ABCDEF, abcdef, 123456}$= : {$\mathit{ABCDEF, abcdef, 123456}$}
+    \item \verb=$\mathbf{ABCDEF, abcdef, 123456}$= : {$\mathbf{ABCDEF, abcdef, 123456}$}
+    \item \verb=$\mathsf{ABCDEF, abcdef, 123456}$= : {$\mathsf{ABCDEF, abcdef, 123456}$}
+    \item \verb=$\mathtt{ABCDEF, abcdef, 123456}$= : {$\mathtt{ABCDEF, abcdef, 123456}$}
+    \item \verb=$\mathcal{ABCDEF}$= : {$\mathcal{ABCDEF}$}
+\end{enumerate}
+

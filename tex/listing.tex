@@ -1,0 +1,30 @@
+
+\paragraph{lstlisting}~{}
+
+\begin{lstlisting}[language={python}]
+`\verb!\begin{lstlisting}[language={python}]!`
+xxx
+`\verb=\end{lstlisting}=`
+
+`\verb!\begin{lstlisting}[language={c++}]!`
+`\verb!\begin{lstlisting}[language={sh}]!`
+\end{lstlisting}
+
+可以在 lstlisting 环境中使用 \textbackslash verb 来输入各种特殊的字符，比如 {\color{red}\ \verb=`$CMD_A`=}
+
+\begin{lstlisting}[language={python}]
+`\verb!\verb=`$CMD_A`=!` `{\color{red}->}` `\verb=`$CMD_A`=`
+\end{lstlisting}
+
+lstlisting 在序列中的项时这么使用：
+
+\begin{lstlisting}[language={python}]
+    ...
+    `\verb!\item!` a item
+`\verb!\begin!`{lstlisting}[language={sh}, `{\color{red}xleftmargin=0em}`]
+...
+`\verb!\end!`{lstlisting}
+    `\verb!\item!` other item
+    ...
+\end{lstlisting}
+

@@ -1,0 +1,289 @@
+
+%
+% practice.tex
+%
+% 0>
+%     '\' : 开始的 string 表示一个命令
+%     {}  : 其中的内容表示命令的参数
+%     []  : 表示命令的选项，是可以忽略的, 省略了则表示使用的默认值
+%
+%     \documentclass : 表示文档类
+%
+%     \usepackage : 用于载入 Latex 宏包
+%
+% 1>  \begin{document} ... \end{document} : 是正文区
+% 2>  \documentclass ... \begin{} : 是导言区, 用于载入宏包，定义命令和调整格式 等
+% 3>  \textbackslash 是输入 '\'
+% 4>  paragraph 是段 | 不编目录，且默认不编号
+% 5>  \vspace{-0.5em} 设置垂直方向间距，作用于当前行
+%
+
+%
+% [Note] 对于 graph 中的 scale 的设置推荐值，具体实际差异再稍微调整 scale
+%  1> draw.io 145% 截图的，使用 scale=0.75
+%     draw.io 120% 截图的，使用 scale=0.70
+%  2> staruml 100% 截图的，使用 scale=0.70
+%
+
+
+%\documentclass[a4paper]{article}
+%\documentclass[UTF8]{ctexart} % support : section 及以下
+\documentclass[UTF8]{ctexrep} % support : chapter 及以下
+
+%\documentclass[UTF8]{ctexbook} % support : part / chapter 及以下
+
+\usepackage[bookmarks=true]{hyperref}
+\hypersetup{
+    CJKbookmarks=true,
+    colorlinks=true,
+    bookmarksnumbered=true
+}
+
+\usepackage{geometry}
+\geometry{papersize={21cm, 29.7cm}}
+\geometry{left=1.27cm, right=1.27cm, top=2.00cm, bottom=2.00cm}
+
+%
+% math 绘图
+%
+\usepackage[all,pdf]{xy}
+
+%
+% 使用 AMS-Latex 来提供数学表达式输入
+%
+\usepackage{amsmath}
+
+\usepackage{graphicx}
+
+\usepackage{enumitem}
+
+\setlength{\lineskiplimit}{10bp}
+\setlength{\lineskip}{10bp}
+\setlength{\parskip}{0pt}
+
+\usepackage{latexsym}
+\usepackage{amssymb}
+
+%
+% 现在确定比较好看的字体：
+% 1> Microsoft YaHei UI
+% 2> Calibri
+%
+
+%
+% book
+%
+%\CTEXsetup[format+={\raggedright},beforeskip=0pt,afterskip=0pt]{part}
+\CTEXsetup[name={,},
+           number={\thechapter},
+           numberformat+={\upshape},
+           format+={\raggedright\slshape\fontspec{Calibri}},
+           beforeskip=0pt,
+           afterskip=1em]{chapter}
+
+\CTEXsetup[format+={\raggedright\fontspec{Calibri}},beforeskip=0pt,afterskip=0pt]{section}
+\CTEXsetup[format+={\fontspec{Calibri}},beforeskip=0pt,afterskip=0pt]{subsection}
+\CTEXsetup[format+={\fontspec{Calibri}},beforeskip=0pt,afterskip=0pt]{subsubsection}
+\CTEXsetup[format+={\fontspec{Calibri}},beforeskip=0pt,afterskip=0pt]{paragraph}
+\CTEXsetup[format+={\fontspec{Calibri}},beforeskip=0pt,afterskip=0pt,indent=0pt]{subparagraph}
+
+\usepackage{ltxtable}
+
+\usepackage[font={small,sl},labelfont=md]{caption}
+
+\usepackage{color}
+
+\definecolor{LightGreen}{RGB}{0,190,2}
+\definecolor{DefinedColorGreen}{RGB}{0,120,2}
+\definecolor{DefinedColorRed}{RGB}{255,0,0}
+\definecolor{DefinedColorDarkRed}{RGB}{120,8,13}
+\definecolor{DefinedColorYellow}{RGB}{230,90,7}
+
+\usepackage[usernames,dvipsnames]{xcolor}
+\usepackage{framed}
+\colorlet{shadecolor}{gray!20}
+
+%
+% font 1
+%
+%\usepackage{txfonts}
+
+%
+% font 2
+%
+%\usepackage[T1]{fontenc}
+%\usepackage{ccfonts,eulervm}
+%\usepackage{lmodern,mathrsfs}
+
+%
+% font 3 | 下面设置的几种字体需要 win 来提供
+%
+% fontspec 所能使用的字体就是 fontconfig 库所能够找到的所有字体，也就是 Tex 发行版与操作系统
+% 中所安装的 字体
+% 字体列表可以使用命令 fc-list 来列出
+%
+\usepackage{fontspec}
+%\setmainfont{Times New Roman}
+\setmainfont{Calibri}
+\setsansfont{Verdana}
+%\setmonofont{Courier New}
+%\setmonofont{Consolas}
+
+\usepackage{listings}
+\lstset{numbers=left,
+        %numberstyle=\tiny,
+        numberstyle=\small,
+        keywordstyle=\color{blue!70}, % !70 表示比例是 0.7
+        %commentstyle=\color{red!50!green!50!blue!50},
+        commentstyle=\color[RGB]{50,185,50},
+        frame=shadowbox,
+        rulesepcolor=\color{red!20!green!20!blue!20},
+        escapeinside=``,
+        xleftmargin=2em,
+        xrightmargin=2em,
+        aboveskip=1em,
+        belowskip=0em,
+        backgroundcolor=\color[RGB]{245,245,244},
+        breaklines,                 % 自动折行
+        extendedchars=false,        % 解决代码跨页时，章节标题、页眉等汉字不显示的问题
+        tabsize=4,                  % 设置 tab 为 4 个空格
+        %basicstyle=\small          % 这么设置只会对代码起作用，对注释不起作用
+        %basicstyle=\small\ttfamily  % 对注释和代码都起作用
+        basicstyle=\small\ttfamily\fontspec{Consolas}  % 对注释和代码都起作用
+}
+
+\setcounter{secnumdepth}{7}
+\setcounter{tocdepth}{7}
+
+%
+% 这个是用来设置 目录 的缩进
+%
+\usepackage{tocloft}
+\setlength{\cftsecindent}{1em}
+\setlength{\cftsubsecindent}{2em}
+\setlength{\cftsubsubsecindent}{3em}
+\setlength{\cftparaindent}{4em}
+\setlength{\cftsubparaindent}{5em}
+
+%
+% 这个是设置页眉
+%
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\rhead{\textsl{xxx@xxx.com}}
+\setlength{\headsep}{10pt}
+\setlength{\skip\footins}{0.5cm}
+
+\usepackage{picinpar}
+
+%
+% 设置了这个之后就不会在最后一行发生 溢出
+%
+\usepackage{blindtext}
+
+%
+% 19/06/21 : 已经实验验证过，这后面两个设置可以不需要也不会再发生溢出
+%
+% \usepackage[textwidth=14.5cm] % 这个数值需要重新计算
+% \parindent=0pt
+%
+
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{tabu}
+\usepackage{colortbl}
+\setlength{\arrayrulewidth}{0.19mm}
+
+\usepackage{threeparttable}
+\usepackage{ulem}
+
+%
+% 设置 longtable 的表格的下间距
+%
+%\setlength{\LTpre}{0em}
+\setlength{\LTpost}{0em}
+
+\renewcommand\thefootnote{\textcircled{\arabic{footnote}}}
+
+%
+% 这个设置是让 \verb 中的字体和全文保持一致
+%
+%\makeatletter
+%\renewcommand*{\verbatim@font}{}
+%\makeatother
+
+%
+% 这个是让 \url{} 中的 url 地址能够折行显示在文档中
+%
+\makeatletter
+\def\UrlAlphabet{%
+        \do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j%
+        \do\k\do\l\do\m\do\n\do\o\do\p\do\q\do\r\do\s\do\t%
+        \do\u\do\v\do\w\do\x\do\y\do\z\do\A\do\B\do\C\do\D%
+        \do\E\do\F\do\G\do\H\do\I\do\J\do\K\do\L\do\M\do\N%
+        \do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V\do\W\do\X%
+        \do\Y\do\Z}
+\def\UrlDigits{\do\1\do\2\do\3\do\4\do\5\do\6\do\7\do\8\do\9\do\0}
+\g@addto@macro{\UrlBreaks}{\UrlOrds}
+\g@addto@macro{\UrlBreaks}{\UrlAlphabet}
+\g@addto@macro{\UrlBreaks}{\UrlDigits}
+\makeatother
+
+%
+% 这个命令是能够 让需要着色的文字的前面有一个小间隙
+%
+% eg. \ColorStr{DefinedColorGreen}{xxx}
+%
+\newcommand\ColorStr[2]{{\color{#1}{#2}}}
+
+\newcommand\FontNewRoman[1]{{\fontspec{Times New Roman}{#1}}}
+%\newcommand\CmdFont[1]{{\small\ttfamily\fontspec{Consolas}{#1}}}
+\newcommand\CmdFont[1]{{\fontsize{8.8pt}{0}\ttfamily\fontspec{Consolas}{#1}}}
+
+%
+% 这几个不能工作，原因是 \verb 不能使用 \Verb 方式来使用
+%
+%\newcommand\Verb[1]{{\small\ttfamily\fontspec{Consolas}\verb|{#1}|}}
+%\newcommand\Verb[1]{\verb!{#1}!}
+%\newcommand\VerbEnv[2][!]{{\small\ttfamily\fontspec{Consolas}\verb{#1}{#2}{#1}}}
+
+
+%
+%-----------------------------------------------------------------------------------------
+%
+
+\begin{document}
+\begin{sloppypar}
+
+
+%
+% body begin ...
+%
+
+%
+% set title page
+%
+\input{title/main.tex}
+
+\newpage
+\tableofcontents
+
+%\chapter{preface}
+
+\include{tex/main} % 
+\include{one/main} % chapter one
+%\include{xxx/main} % chapter two
+%\include{xxx/main} % chapter three
+%\include{xxx/main} % ...
+
+
+
+%
+% body end ...
+%
+
+
+\end{sloppypar}
+\end{document}
+

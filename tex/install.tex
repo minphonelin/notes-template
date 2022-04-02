@@ -1,0 +1,32 @@
+
+\subsection{install}
+
+\subsubsection{separate installation}
+
+xelatex 可以编译出带目录的 pdf 文档 : (这两个安装包都很大，每个都几百Ｍ)
+
+\begin{enumerate}[topsep=0pt,itemsep=0pt,parsep=0pt,leftmargin=3.6em,label=\arabic*>]
+    \item sudo apt-get install texlive-xetex
+    \item sudo apt-get install latex-cjk-all | chinese support
+    \item sudo apt-get install texmaker | texmaker is tex editor
+\end{enumerate}
+
+\subsubsection{integrated installation}
+
+推荐使用这种安装方式，且安装也比较简单
+
+TeX Live Home Page : \url{http://tug.org/texlive/acquire-netinstall.html}
+
+Texmaker Home Page : \url{http://www.xm1math.net/texmaker/}
+
+\begin{enumerate}[topsep=0pt,itemsep=0pt,parsep=0pt,leftmargin=3.6em,label=\arabic*>]
+    \item download texlive from TexLive HomePage : eg. texlive2019-20190410.iso
+    \item sudo mount -o loop texlive2019-20190410.iso /media/iso
+    \item cd /media/iso
+    \item install texlive \par
+        {\color{DefinedColorGreen}./install-tl}
+    \item set .bashrc \par
+        {\color{violet}export PATH=\verb!"!/usr/local/texlive/2019/bin/x86\_64-linux:\$PATH\verb!"!}
+    \item set windows fonts, ref section \ref{sec:use-win-font-in-ubuntu}
+\end{enumerate}
+

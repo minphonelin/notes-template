@@ -1,0 +1,241 @@
+
+\subsubsection{tabular、tabularx、array}
+
+table to latex code : \url{https://www.tablesgenerator.com/}
+
+\url{https://github.com/krlmlr/Excel2LaTeX}
+
+文本或数学模式都可以使用 tabular，数学模式还可以使用 array 环境（即包含数学符号的公式）
+
+table 浮动表格中的几个命令设置如下：
+
+\begin{lstlisting}[language={tex}]
+...
+\setlength{\abovecaptionskip}{1.0em} %
+\setlength{\belowcaptionskip}{`-`1.3em}% 这两个必须得放在 caption 前面，否则不起作用
+\caption{mxnet 的基本概念}
+...
+\end{lstlisting}
+
+\paragraph{tabular}~{}
+
+tabular 中的参数设置： 
+\begin{enumerate}[topsep=0pt,itemsep=0pt,parsep=0pt,leftmargin=3.6em,label=\arabic*>]
+    \item \textbackslash raggedleft：表示左边不对齐，\textcolor{red}{即右对齐}
+    \item \textbackslash raggedright：表示右边不对齐，\textcolor{red}{即左对齐}
+    \item \textbackslash centering：表示居中
+    \item p\{width value\}：设置列框，使用了列宽后，需在列内容处使用上述的 对其方式
+    \item \textbackslash arraystretch\{val\}：设置行间距，默认值为 1
+        eg. \textbackslash renewcommand\textbackslash arraystretch\{2\} | 默认值的 2 倍
+    \item \textbackslash multicolumn：合并不同列 \par
+        \textbackslash multicolumn\{列数\}\{格式\}\{内容\} \par
+        \textbackslash multicolumn\{2\}\{c|\}\{内容\} : {\color{red}c 表示居中，| 表示边框} \par
+        \textbackslash multicolumn\{2\}\{l|\}\{内容\} : left \par
+        \textbackslash multicolumn\{2\}\{r|\}\{内容\} : right \par
+        \textcolor{DefinedColorGreen}{如果只是针对 1 列操作时，相当于是修改对齐、竖线格式}
+    \item \textbackslash multirow：跨不同行，类似于合并不同行 | \textbackslash usepackage\{multirow\}\par
+        \textbackslash multirow\{行数\}\{宽度\}\{内容\} \par
+        \textbackslash multirow\{行数\}*\{内容\} | 宽度由输入内容来决定 \par
+        需要结合 \textbackslash cline{start - end} 来使用 eg. \verb!\cline{2-5}!
+\end{enumerate}
+
+\begin{lstlisting}[language={tex}]
+\begin{table}[htbp!]
+    \centering
+    \setlength{\abovecaptionskip}{0.5em}    % 这个设置在 tabular 前面的话的参数值
+    \setlength{\belowcaptionskip}{`-`0.5em}
+    \caption{xxx}
+    \label{tab:xxx}
+\begin{tabular}{|l|l|}
+...
+\end{lstlisting}
+
+\begin{lstlisting}[language={tex}]
+...
+\end{tabular}
+    \centering
+    \setlength{\abovecaptionskip}{1.0em}    % 设置在 tabular 后面的话的参数值
+    \setlength{\belowcaptionskip}{`-`1.3em}
+    \caption{xxx}
+    \label{tab:xxx}
+\end{table}
+\end{lstlisting}
+
+
+\begin{center}
+%\renewcommand\arraystretch{2}
+\begin{tabular}{|p{8em}|c|l|p{4em}|p{4em}|}
+    \hline
+    \raggedleft{\textbackslash raggedleft} & abc & abc & abc & abc \\
+    \hline
+    \raggedright{\textbackslash raggedright} & abc & abc & \multicolumn{2}{c|}{abc} \\
+    \hline
+    \centering{\textbackslash centering} & abc & abc & abc & abc \\
+    \hline
+    default & abc & abc & abc & abc \\
+    \hline
+    \multirow{2}*{multirow} & abc & abc & abc & abc \\
+
+    %
+    % 这里表示只需要对 2-5 列画横线 , \hline 表示从第 1 列到最后 1 列都画横线
+    %
+    \cline{2-5}
+                            & abc & abc & abc & abc \\
+    \hline
+    default & abc & abc & abc & abc \\
+    \hline
+    \centering{\multirow{2}*{multirow}} & abc & abc & abc & abc \\
+    \cline{2-5}
+                            & abc & abc & abc & abc \\
+    \hline
+    \raggedleft{\multirow{2}*{multirow}} & abc & abc & abc & abc \\
+    \cline{2-5}
+                            & abc & abc & abc & abc \\
+    \hline
+\end{tabular}
+\end{center}
+
+\paragraph{tabularx}~{}
+
+tabularx 环境是固定宽度的表格，这里的固定宽度指\textcolor{red}{铺满页面宽度}
+
+%
+% Y 是重新定义的格式，\arraybackslash 表示命令恢复
+%
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}
+\begin{tabularx}{46em}{|c|X|X|R|C|}
+    \hline
+    数字 & 1 & 2 & 3 & 4 \\
+    \hline
+    英文 & one & two & three & four \\
+    \hline
+\end{tabularx}
+
+\paragraph{longtable}~{}
+
+\begin{lstlisting}[language={tex}]
+\begin{longtable}{|l|m{40em}|}
+    \hline
+    aaa   & xxx \\
+    \hline
+    bbb   & xxx \\
+    \hline
+    ccc   & xxx # 这样可以实现换行
+
+          1> xxx
+
+          2> xxx \\
+    \hline
+\end{longtable}
+\end{lstlisting}
+
+\begin{longtable}{|l|m{40em}|}
+    \hline
+    aaa   & xxx \\
+    \hline
+    bbb   & xxx \\
+    \hline
+    ccc   & xxx
+
+          1> xxx
+
+          2> xxx \\
+    \hline
+\end{longtable}
+
+\paragraph{array | tabu}~{}
+
+\begin{enumerate}[topsep=0pt,itemsep=0pt,parsep=0pt,leftmargin=3.6em,label=\arabic*>]
+    \item 列格式控制：\textbackslash usepackage\{array\}
+    \item 行格式控制：\textbackslash usepackage\{tabu\}
+\end{enumerate}
+
+\subparagraph{array}~{}
+
+array 新增的基本命令(\verb=\usepackage{array}=)：
+\begin{enumerate}[topsep=0pt,itemsep=0pt,parsep=0pt,leftmargin=3.6em,label=\arabic*>]
+    \item \verb=m{宽}=：类似 p 格式，产生具有固定宽度的列，并可以自动换行，垂直方向居中对齐 \par
+        这个 m 格式在 tabular 、longtable 中都是可以使用的
+    \item \verb=b{宽}=：类似 p 格式，垂直方向与最后一行对齐
+    \item \verb=>{xx}=：把 xx 插入后面一列的开头
+    \item \verb=<{xx}=：把 xx 插入前面一列的末尾
+    \item \verb=!{xx}=：把 xx 作为表格线处理，相当于使用了 \verb=@{xx}= 但左右两边会有额外的间距 \par
+        eg. \verb=c!{$\Rightarrow$}=
+\end{enumerate}
+
+格式符 > 与 < 通常用来设置整列的格式，例如改变一列表格的字体或者使用数学模式
+
+\begin{tabular}{>{\bfseries}c|>{\itshape}c>{$}c<{$}}
+    \hline
+    姓名 & \textnormal{得分} & \multicolumn{1}{c}{额外加分} \\
+    \hline
+    A & 85 & +7 \\
+    B & 82 & 0 \\
+    C & 70 & -2 \\
+    \hline
+\end{tabular}
+
+%
+% 这个可以自动居中
+%
+\begin{tabular}{|>{$}r<{$}|>{\setlength\parindent{2em}}m{35em}|>{\centering\arraybackslash}m{4em}|}
+    \hline
+    \pi & 希腊字母，希腊字母希腊字母希腊字母希腊字母希腊字母希腊字母希腊字母希腊字母 & 常用 \\
+    \hline
+    \pi & 希腊字母，希腊字母希腊字母希腊字母希腊字母希腊字母希腊字母希腊字母希腊字母 & 常用 \\
+    \hline
+\end{tabular}
+
+array 宏包提供的\verb=\newcolumntype= 用于定义新的列格式的命令：
+\begin{enumerate}[topsep=0pt,itemsep=0pt,parsep=0pt,leftmargin=3.6em,label=\arabic*>]
+    \item \verb=\newcolumntype{M}{>{$}c<{$}}=
+    \item \verb=\newcolumntype{P}[1]{>{\setlength\parindent{2em}}p{#1}}=
+    \item \verb=\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}= \par
+        eg. \verb=\begin{tabular}{|M|P{15em}|C{4em}|}=
+\end{enumerate}
+
+\subparagraph{tabu}~{}
+
+tabu 宏包提供 \textbackslash rowfont 命令来设置行的格式
+
+\begin{tabu}{ccc}
+    \hline
+    \rowfont{\bfseries} 姓名 & 得分 & \multicolumn{1}{c}{额外加分} \\
+    \hline
+    \rowfont{\color{blue}} A & 85 & +7 \\
+    \rowfont{\color{red}} B & 82 & 0 \\
+    \rowfont{\color{green}} C & 70 & -2 \\
+    \hline
+\end{tabu}
+
+\paragraph{threeparttable}~{}
+
+\begin{enumerate}[topsep=0pt,itemsep=0pt,parsep=0pt,leftmargin=3.6em,label=\arabic*>]
+    \item \verb=usepackage{threeparttable}=
+    \item \verb=\tnote{val}=：使用这个来定义表格中的角标 eg.\par
+        \textcolor{red}{\textbackslash tnote\{2\}} \par
+        \textcolor{red}{\textbackslash tnote\{a\}} \par
+        \textcolor{red}{\textbackslash tnote\{I\}} \par
+        \textcolor{red}{\textbackslash tnote\{*\}}
+\end{enumerate}
+
+\begin{center}
+\begin{threeparttable} 
+    \centering 
+    \caption{threeparttable example} 
+    \label{tbl:threeparttable example} 
+    \begin{tabular}{l|cc|cc}
+        \hline 
+        $F_{1}$ &$3.70e-03$ &$4.20e-03$\tnote{2} &$ \textbf{3.70e-03}$ &$3.90e-03$\\
+        $F_{2}$ &$3.60e-03$\tnote{a} &$1.55e-02$ &$\textbf{6.70e-03}$ &$8.50e-03$\\ 
+        \hline
+    \end{tabular} 
+    \begin{tablenotes} 
+    \item[1] The bolder ones mean better. 
+    \item[2] my note
+    \item[a] my note a
+    \end{tablenotes} 
+\end{threeparttable} 
+\end{center}
+

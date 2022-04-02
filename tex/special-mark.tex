@@ -1,0 +1,51 @@
+
+\subsubsection{special mark}
+
+\paragraph{mark key point}~{}
+
+\begin{enumerate}[topsep=0pt,itemsep=0pt,parsep=0pt,leftmargin=3.6em,label=\arabic*>]
+    \item \verb!\underline{xxx}! \par
+        \verb!\underline{abc}! \ColorStr{red}{=>} \underline{abc}
+    \item \verb!\emph{xxx}! \par
+        \verb!\emph{abc}! \ColorStr{red}{=>} \emph{abc}
+    \item \verb!\uuline{xxx}! \par
+        \verb!\uuline{abc}! \ColorStr{red}{=>} \uuline{abc}
+    \item \verb!\uwave{xxx}! \par
+        \verb!\uwave{abc}! \ColorStr{red}{=>} \uwave{abc}
+    \item \verb!\sout{xxx}! \par
+        \verb!\sout{abc}! \ColorStr{red}{=>} \sout{abc}
+    \item \verb!\xout{xxx}! \par
+        \verb!\xout{abc}! \ColorStr{red}{=>} \xout{abc}
+    \item \verb!\dashuline{xxx}! \par
+        \verb!\dashuline{abc}! \ColorStr{red}{=>} \dashuline{abc}
+    \item \verb!\dotuline{xxx}! \par
+        \verb!\dotuline{abc}! \ColorStr{red}{=>} \dotuline{abc}
+\end{enumerate}
+
+\paragraph{todo list}~{}
+
+\begin{enumerate}[topsep=0pt,itemsep=0pt,parsep=0pt,leftmargin=3.6em,label=\arabic*>]
+    \item \verb!$\square$! \ColorStr{red}{=>} $\square$
+    \item \verb!$\boxtimes$! \ColorStr{red}{=>} $\boxtimes$
+    \item \verb!$\surd$! \ColorStr{red}{=>} $\surd$
+\end{enumerate}
+
+\begin{enumerate}[topsep=0pt,itemsep=0pt,parsep=0pt,leftmargin=3.6em,label=\arabic*>]
+    \item $\square$《笔记本》- 笔记本
+    \item $\surd$《\sout{笔记本}》- 笔记本
+    \item $\boxtimes$\sout{《笔记本》- 笔记本} $\surd$\ColorStr{red}{(done)}
+    \item $\square$《笔记本》- 笔记本
+\end{enumerate}
+
+\paragraph{roman numerals}~{}
+
+\begin{lstlisting}[language={python}]
+I       `-`> 1                          VI      `-`> 6
+II      `-`> 2                          VII     `-`> 7
+III     `-`> 3                          VIII    `-`> 8
+IV      `-`> 4                          IX      `-`> 9
+V       `-`> 5                          X       `-`> 10
+\end{lstlisting}
+
+
+

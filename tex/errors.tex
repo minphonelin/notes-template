@@ -1,0 +1,15 @@
+
+\newpage
+\subsection{errors}
+
+\begin{lstlisting}[language={c}]
+Runaway argument?
+{\376\377\0001\000.\0
+! File ended while scanning use of \@@BOOKMARK.
+<inserted text>
+    \par
+l.232 \begin{document}}
+\end{lstlisting}
+
+遇到这个错误是上一次编译中断后的 aux/out 文件的部分内容缺失，因此只需要删除 *.aux / *.out 文件之后重新编译即可
+

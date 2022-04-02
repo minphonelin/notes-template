@@ -1,0 +1,200 @@
+
+\subsection{basic}
+
+\begin{enumerate}[topsep=0pt,itemsep=0pt,parsep=0pt,leftmargin=3.6em,label=\arabic*>]
+    \item 输入一个反斜杠 : {\color{red}\ \verb|\textbackslash|} => ``\textbackslash"
+    \item 输入大括号 : {\color{red}\ \verb|\{|} => ``\{"
+    \item 输入百分号 : {\color{red}\ \verb|\%|} => ``\%"
+    \item 输入一个空格 : ``\textbackslash\ " 或者 ``{ }"
+    \item 输入\CmdFont{--} : \verb!\CmdFont{!\CmdFont{--}\verb!}! 会比较好看
+    \item 中文标点(zh) ‘ | ； | ’ | ， | 。| “ | ” \par
+        \textcolor{teal}{就正常中文输入法中输入的标点符号，就可以直接显示为中文标点}
+        {\color{red}(注意是 Calibri 字体的情况下才可以)}
+
+    \item {\color{blue}Times New Roman 字体下的标点(en)}：\par
+        \verb={\fontspec{Times New Roman}' | ' | " | " | , | ; | `}= 
+        {\color{DefinedColorRed}$\Rightarrow$} % =>
+        {\fontspec{Times New Roman}' | ' | " | " | , | ; | `} \par
+        \verb={\fontspec{Times New Roman} ' "A" and "B" '}=
+        {\color{DefinedColorRed}$\Rightarrow$} % =>
+        {\fontspec{Times New Roman}' "A" and "B" '} \par
+    \item {\color{blue}Calibri 字体下的标点(en)}{\color{red}(这种输入方式的字体会比较多)}：\par
+        \verb={\fontspec{Calibri} ` | ' | `` | " | , | ; | \textasciigrave }=
+        {\color{DefinedColorRed}$\Rightarrow$} % =>
+        ` | ' | `` | " | , | ; | \textasciigrave \par
+        \verb={\fontspec{Calibri} `\,``A" and ``B"\,' }=
+        {\color{DefinedColorRed}$\Rightarrow$} % =>
+        `\,``A" and ``B"\,'
+
+    \item using symbol：\textbackslash symbol\{96\} {\color{DefinedColorRed}$\to$} \symbol{96} 、
+        \textbackslash symbol\{39\} {\color{DefinedColorRed}$\to$} \symbol{39} \par
+        通过使用 symbol 来输入字符，可以输入任意有编码的字符
+    \item \^{}：input(\textbackslash \^{}\{\})
+    \item \~{}：input(\textbackslash \~{}\{\})，在 \textbackslash CmdFont 中也可以使用这个方法来输入 \~{}
+    \item \{\textbackslash songti 宋体\}：{\songti 宋体}
+    \item \{\textbackslash kaishu 楷书\}：{\kaishu 楷书}
+    \item \{\textbackslash heiti 黑体\}：{\heiti 黑体}
+    \item \{\textbackslash fangsong 仿宋\}：{\fangsong 仿宋}
+    \item \{\textbackslash fontspec\{YouYuan\} 幼圆\}：{\fontspec{YouYuan}幼圆}  % for win-font
+    \item \{\textbackslash fontspec\{Consolas\} Consolas\}：{\fontspec{Consolas}Consolas}  % for win-font
+        \textcolor{teal}{| 常规五号}
+    \item \{\textbackslash zihao\{-5\}\textbackslash fontspec\{Consolas\} Consolas\}：
+        {\zihao{-5}\fontspec{Consolas}Consolas}  % for win-font
+        \textcolor{teal}{| 小五号}
+    \item \{\textbackslash small\textbackslash fontspec\{Consolas\} Consolas\}：
+        {\small\fontspec{Consolas}Consolas}  % for win-font
+        \textcolor{teal}{| small 就是小五号}
+    \item \textbackslash verb：eg. \verb'\verb!\songti!' 
+        $\Rightarrow$ % =>
+        \verb!\songti! \par
+        \textcolor{red}{`!'} 表示环境符号，也可以用其他的符号替代 \par
+        \verb={\color{teal}\verb!$\max_n$!}= => {\color{teal}\verb!$\max_n$!} : 给 \textbackslash verb 包围的上色
+    \item 数字的下划线分割(使用公式环境)：eg. \verb=0xf000$\underline\ $0000= 
+        $\Rightarrow$ 
+        0xf000$\underline\ $0000 \par
+        {\color{teal}在 Calibri 字体下则可以直接使用\_，而不需要使用\textbackslash underline}
+    \item url link：\par
+        eg. \textbackslash url\{https://xxxx\} 
+        $\Rightarrow$ % =>
+        \url{https://xxxx} \par
+        eg. \verb=\textsl{\url{/https://xxxx}}=
+        $\Rightarrow$ % =>
+        \textsl{\url{https://xxxx}} \par
+        eg. \verb=\emph{\url{/https://xxxx}}=
+        $\Rightarrow$ % =>
+        \emph{\url{https://xxxx}} | \textcolor{teal}{在 Calibri 字体下会比较好看}
+    \item \textbackslash vspace\{-0.8em\}：设置前后行的间距
+    \item \textbackslash dotfill：绘制虚线分割线，可以查看 section \ref{sec:book-list} 中的使用效果
+    \item \textbackslash hrulefill：绘制实线分割线
+\end{enumerate}
+
+\subsubsection{lstlisting / verbatim}
+
+\paragraph{enumerate}~{}
+
+\begin{lstlisting}[language={python}]
+\begin{enumerate}
+
+\begin{enumerate}[topsep=0pt,itemsep=0pt,parsep=0pt,leftmargin=3.6em,label=\arabic*>]
+\begin{enumerate}[topsep=0pt,itemsep=0pt,parsep=0pt,leftmargin=3.6em,label=\arabic*.]
+\begin{enumerate}[topsep=0pt,itemsep=0pt,parsep=0pt,leftmargin=3.6em,label=\arabic*)]
+\begin{enumerate}[topsep=0pt,itemsep=0pt,parsep=0pt,leftmargin=3.6em,label=(\arabic*)]
+
+# 大小写罗马数字
+\begin{enumerate}[topsep=0pt,itemsep=0pt,parsep=0pt,leftmargin=3.6em,label=\roman*>]
+\begin{enumerate}[topsep=0pt,itemsep=0pt,parsep=0pt,leftmargin=3.6em,label=\Roman*>]
+
+# 大小写字母
+\begin{enumerate}[topsep=0pt,itemsep=0pt,parsep=0pt,leftmargin=3.6em,label=\alph*>]
+\begin{enumerate}[topsep=0pt,itemsep=0pt,parsep=0pt,leftmargin=3.6em,label=\Alph*>]
+
+# 特殊符号
+\begin{enumerate}[topsep=0pt,itemsep=0pt,parsep=0pt,leftmargin=3.6em,label=\fnsymbol*>]
+\end{lstlisting}
+
+\begin{lstlisting}[language={python}]
+\begin{enumerate}[topsep=0pt,itemsep=0pt,parsep=0pt,leftmargin=3.6em,label=\arabic*>]
+    \item 编号
+        \arabic{enumi}, \roman{enumi}, \Roman{enumi}, 
+        \alph{enumi}, \Alph{enumi}, \fnsymbol{enumi}
+    \item 编号
+        \arabic{enumi}, \roman{enumi}, \Roman{enumi}, 
+        \alph{enumi}, \Alph{enumi}, \fnsymbol{enumi}
+    \item 编号
+        \arabic{enumi}, \roman{enumi}, \Roman{enumi}, 
+        \alph{enumi}, \Alph{enumi}, \fnsymbol{enumi}
+\end{enumerate}
+\end{lstlisting}
+
+\begin{enumerate}[topsep=0pt,itemsep=0pt,parsep=0pt,leftmargin=3.6em,label=\arabic*>]
+    \item 编号
+        \arabic{enumi}, \roman{enumi}, \Roman{enumi}, \alph{enumi}, \Alph{enumi}, \fnsymbol{enumi}
+    \item 编号
+        \arabic{enumi}, \roman{enumi}, \Roman{enumi}, \alph{enumi}, \Alph{enumi}, \fnsymbol{enumi}
+    \item 编号
+        \arabic{enumi}, \roman{enumi}, \Roman{enumi}, \alph{enumi}, \Alph{enumi}, \fnsymbol{enumi}
+\end{enumerate}
+
+\input{tex/listing.tex}
+
+\paragraph{verbatim}~{}
+
+缩略写法：\textbackslash verb=\textcolor{red}{xxx}= ： \textcolor{red}{xxx} 是要原格式表示的内容
+
+%\begin{verbatim}
+%    \usepackage[T1]{fontenc}            % font styling
+%    \usepackage{lmodern, mathrsfs}
+%\end{verbatim}
+
+\begin{lstlisting}[language={python}]
+\makeatletter
+\renewcommand*{\verbatim@font}{}
+\makeatother
+\end{lstlisting}
+
+如果需要设置 \textbackslash verb 环境中的颜色，可以直接在外部包上 \textbackslash color\{\} 来进行设置即可
+
+如果还需要在  \textbackslash verb 环境中设置字体，可以以如下方式来使用：
+
+\begin{lstlisting}[language={c}]
+{\small\ttfamily\fontspec{Consolas}\verb!grep `-`in "\`-`\`-`" ./ `-`R!}
+\end{lstlisting}
+
+%\begin{lstlisting}[language={python}]
+%\verb={\fontspec{Times New Roman} abcdefgxxxx}= 
+%\end{lstlisting}
+
+\input{tex/table.tex}
+\input{tex/color.tex}
+\input{tex/user-def-cmd-env.tex}
+\input{tex/font.tex}
+
+\newpage
+\input{tex/formula.tex}
+
+\newpage
+\input{tex/special-mark.tex}
+
+\newpage
+\input{tex/special-symbols.tex}
+
+\subsubsection{shaded 设置段落阴影}
+
+使用 framed package 的 shaded 环境来进行设置，这个阴影环境支持跨页，颜色设置在导言区 \textcolor{red}{eg. \textbackslash 
+colorlet\{shadecolor\}\{gray!20\}}；并使用 \textcolor{red}{eg. \textbackslash vspace\{-0.8em\}} 来进行前后间距设置
+
+\begin{lstlisting}[language={sh}]
+\vspace{`-`0.8em}
+\begin{shaded}
+a b c d ... 等具体内容
+\end{shaded}
+\vspace{`-`0.8em}
+\end{lstlisting}
+
+\vspace{-0.8em}
+\begin{shaded}
+在实际的网络中存在如下图所示的情况，因此实际考虑有 “quantize-op” 与 relu 或者 conv 时，
+是与 “quantize-op” 之前的 relu 融合还是与 “quantize-op” 之后的 conv 融合的问题
+\end{shaded}
+\vspace{-0.8em}
+
+\subsubsection{footnote}
+
+\begin{lstlisting}[language={python}]
+AAA \footnote{AAA 的注脚内容}
+\end{lstlisting}
+
+\subsubsection{embeded image}
+
+\begin{lstlisting}[language={sh}]
+\begin{figure}[htbp!]
+\setlength{\belowcaptionskip}{`-`1.3em}
+\centering
+\includegraphics[scale=0.68]{`{\color{red}images/aaa.jpg}`}
+\caption{aaa}
+\label{fig:aaa}
+\end{figure}
+\end{lstlisting}
+
+\input{tex/section.tex}
+

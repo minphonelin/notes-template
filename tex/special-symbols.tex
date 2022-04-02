@@ -1,0 +1,157 @@
+
+\subsubsection{special symbols}
+
+\url{https://www.latexlive.com/help#d13}
+
+\url{http://mohu.org/info/symbols/symbols.htm}
+
+\url{https://www.caam.rice.edu/~heinken/latex/symbols.pdf}
+
+特殊符号都是在 \$ xxx \$ 中输入的，或者在输入公式的其他方式中输入，{\color{DefinedColorRed}eg. \$\textbackslash 
+bar\{x\}\$}
+
+\newcommand\PrintCode[2]{\textcolor{DefinedColorGreen}{\textbackslash #1\{#2\}}}
+\newcommand\PrintSymbol[1]{\textcolor{red}{$#1$}}
+\newcommand\SpecCharPair[3]{\PrintSymbol{#1} & \PrintCode{#2}{#3}}
+
+\paragraph{math related}~{}
+
+\begin{longtable}{|c|m{10em}|c|m{10em}|c|m{10em}|}
+    \hline
+    \SpecCharPair{\sin\theta}{sin}{\textbackslash theta} &
+    \SpecCharPair{\cos{\theta}}{cos}{\textbackslash theta} &
+    \SpecCharPair{\cosh{h}}{cosh}{h} \\
+    \hline
+    \SpecCharPair{\sinh g}{sinh}{g} &
+    \SpecCharPair{\min{L}}{min}{L} &
+    \SpecCharPair{\max{H}}{max}{H} \\
+    \hline
+    \SpecCharPair{\sup{t}}{sup}{t} &
+    \SpecCharPair{\ker{x}}{ker}{x} &
+    \SpecCharPair{\Pr{x}}{Pr}{x} \\
+    \hline
+    \SpecCharPair{\arctan{\frac{L}{T}}}{arctan}{\textbackslash frac\{L\}\{T\}} &
+    \SpecCharPair{\arcsin\frac{L}{r}}{arcsin}{\textbackslash frac\{L\}\{r\}} &
+    \SpecCharPair{\arccos{\frac{T}{r}}}{arccos}{\textbackslash frac\{T\}\{r\}} \\
+    \hline
+    \SpecCharPair{\operatorname{argch}l}{operatorname}{\{argch\}l} &
+    \SpecCharPair{\operatorname{argsh}k}{operatorname}{\{argsh\}k} &
+    \SpecCharPair{\operatorname{th}i}{operatorname}{\{th\}i} \\
+    \hline
+    \SpecCharPair{\operatorname{ch}h}{operatorname}{\{ch\}h} &
+    \SpecCharPair{\operatorname{argth}m}{operatorname}{\{argth\}m} &
+    \SpecCharPair{\arg{x}}{arg}{x} \\
+    \hline
+    \SpecCharPair{\tan{theta}}{tan}{theta} &
+    \SpecCharPair{\tanh{i}}{tanh}{i} &
+    \SpecCharPair{\limsup{S}}{limsup}{S} \\
+    \hline
+    \SpecCharPair{\liminf{I}}{liminf}{I} &
+    \SpecCharPair{\lg{X}}{lg}{X} &
+    \SpecCharPair{\inf{s}}{inf}{s} \\
+    \hline
+    \SpecCharPair{\exp{\!t}}{exp}{\textbackslash !t} &
+    \SpecCharPair{\ln{X}}{ln}{X} &
+    \SpecCharPair{\log{X}}{log}{X} \\
+    \hline
+    \SpecCharPair{\deg{x}}{deg}{x} &
+    \SpecCharPair{\det{x}}{det}{x} &
+    \SpecCharPair{\dim{x}}{dim}{x} \\
+    \hline
+    \SpecCharPair{\log{_\alpha{x}}}{log}{\_\textbackslash alpha\{x\}} &
+    \SpecCharPair{\hom{x}}{hom}{x} &
+    \SpecCharPair{\lim{_{t\to n}T}}{lim}{\_\{t \textbackslash to n\}T} \\
+    \hline
+\end{longtable}
+
+\begin{longtable}{|c|m{9em}|c|m{9em}|c|m{9em}|c|m{9em}|}
+    \hline
+    \SpecCharPair{\nabla}{nabla}{} &
+    \SpecCharPair{\partial{x}}{partial}{x} &
+    \SpecCharPair{\mathrm{d}{x}}{mathrm\{d\}}{x} \\
+    \hline
+\end{longtable}
+
+\paragraph{relation symbols}~{}
+\paragraph{binary operations}~{}
+\paragraph{set and/or logic notation}~{}
+\paragraph{delimiters}~{}
+\paragraph{greek letters}~{}
+
+
+\begin{longtable}{|c|m{9em}|c|m{9em}|c|m{9em}|c|m{9em}|}
+    \hline
+    \SpecCharPair{\alpha}{}{alpha} &
+    \SpecCharPair{\beta}{}{beta} &
+    \SpecCharPair{\gamma}{}{gamma} &
+    \SpecCharPair{\delta}{}{delta} \\
+    \hline
+    \SpecCharPair{\epsilon}{}{epsilon} &
+    \SpecCharPair{\varepsilon}{}{varepsilon} &
+    \SpecCharPair{\zeta}{}{zeta} &
+    \SpecCharPair{\eta}{}{eta} \\
+    \hline
+    \SpecCharPair{\theta}{}{theta} &
+    \SpecCharPair{\vartheta}{}{vartheta} &
+    \SpecCharPair{\iota}{}{iota} &
+    \SpecCharPair{\kappa}{}{kappa} \\
+    \hline
+    \SpecCharPair{\lambda}{}{lambda} &
+    \SpecCharPair{\mu}{}{mu} &
+    \SpecCharPair{\nu}{}{nu} &
+    \SpecCharPair{\xi}{}{xi} \\
+    \hline
+    \PrintSymbol{o} & \textcolor{DefinedColorGreen}{o} &
+    \SpecCharPair{\pi}{}{pi} &
+    \SpecCharPair{\varpi}{}{varpi} &
+    \SpecCharPair{\rho}{}{rho} \\
+    \hline
+    \SpecCharPair{\varrho}{}{varrho} &
+    \SpecCharPair{\sigma}{}{sigma} &
+    \SpecCharPair{\varsigma}{}{varsigma} &
+    \SpecCharPair{\tau}{}{tau} \\
+    \hline
+    \SpecCharPair{\upsilon}{}{upsilon} &
+    \SpecCharPair{\phi}{}{phi} &
+    \SpecCharPair{\varphi}{}{varphi} &
+    \SpecCharPair{\chi}{}{chi} \\
+    \hline
+    \SpecCharPair{\psi}{}{psi} &
+    \SpecCharPair{\omega}{}{omega} &
+    \SpecCharPair{\Gamma}{}{Gamma} &
+    \SpecCharPair{\Delta}{}{Delta} \\
+    \hline
+    \SpecCharPair{\Theta}{}{Theta} &
+    \SpecCharPair{\Lambda}{}{Lambda} &
+    \SpecCharPair{\Xi}{}{Xi} &
+    \SpecCharPair{\Pi}{}{Pi} \\
+    \hline
+    \SpecCharPair{\Sigma}{}{Sigma} &
+    \SpecCharPair{\Upsilon}{}{Upsilon} &
+    \SpecCharPair{\Phi}{}{Phi} &
+    \SpecCharPair{\Psi}{}{Psi} \\
+    \hline
+    \SpecCharPair{\Omega}{}{Omega} \\
+    \cline{1-2}
+\end{longtable}
+
+\paragraph{other symbols}~{}
+
+\begin{longtable}{|c|m{9em}|c|m{9em}|c|m{9em}|c|m{9em}|}
+    \hline
+    \SpecCharPair{\bar{x}}{bar}{x} &
+    \SpecCharPair{\acute{\eta}}{acute}{\textbackslash eta} &
+    \SpecCharPair{\grave{\eta}}{grave}{\textbackslash eta} &
+    \SpecCharPair{\check{\alpha}}{check}{\textbackslash alpha} \\
+    \hline
+    \SpecCharPair{\breve{a}}{breve}{a} &
+    \SpecCharPair{\dot{x}}{dot}{x} &
+    \SpecCharPair{\hat{\alpha}}{hat}{\textbackslash alpha} &
+    \SpecCharPair{\ddot{y}}{ddot}{y} \\
+    \hline
+    \SpecCharPair{\tilde{\iota}}{tilde}{\textbackslash iota} \\
+    \cline{1-2}
+\end{longtable}
+
+\paragraph{trigonometric functions}~{}
+

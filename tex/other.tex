@@ -1,0 +1,110 @@
+
+\subsection{other}
+
+%%\subsubsection{chen shuo config}
+%%这个是陈硕的 latex 常用设置，其中的反斜杠使用正斜杠替代，这样方便显示
+%%
+%%https://blog.csdn.net/solstice/article/details/638
+%%
+%%\paragraph{段首缩进}~{}
+%%
+%%中文习惯在段首缩进两格，在LaTeX中，/parindent 表示段首缩进的长度，我们将它设置为当前字号的两个
+%%大写字母M的宽度，大约正好是两个汉字的宽度：{\color{DefinedColorRed}/setlength\{/parindent\}\{2em\}}
+%%
+%%LaTeX 默认每节的第一段的段首不缩进，这不符合中文排版习惯。我们希望正文的每一段都要缩进，使用
+%%indentfirst宏包就可办到：{\color{DefinedColorRed}/usepackage\{indentfirst\}}
+%%
+%%\paragraph{段距行距}~{}
+%%
+%%LaTeX 用/baselineskip表示当前的行距，其默认值大约是当前字号的1.2倍，如果当前字号是10pt，
+%%那么/baselineskip是12pt。这对英文排版是合适的，对中文就显得太拥挤了，因为英文正文多为小
+%%写字母，字高与小写的x差不多（即1ex）。如果字号为10pt，那么1ex =4.3pt。我通常把行距设为字
+%%号的1.8倍：
+%%
+%%{\color{DefinedColorRed}/setlength\{/baselineskip\}\{1.8em\}}
+%%
+%%这个值随时可以改，对更改点以后的文字有效
+%%
+%%LaTeX 用/parskip表示段距，我一般把它设为1ex：{\color{DefinedColorRed}/setlength\{/parskip\}\{1ex\}}
+%%
+%%注意这些修改长度的命令最好都放在正文区（即/begin\{document\}之后）
+%%
+%%\paragraph{页眉页脚}~{}
+%%
+%%/documentclass[10pt, a4paper]{book}
+%%/usepackage{fancyhdr}
+%%
+%%在 LaTeX 中先把 page style 设为fancy，再设置这个style中的页眉和页脚。但是它默认每章的
+%%第一页的page style是plain，需要单独处理。
+%%
+%%\begin{lstlisting}[language={matlab}]
+%%% 设置 plain style 的属性
+%%/fancypagestyle{plain}{%
+%%/fancyhf{}                    % 清空当前设置
+%%
+%%% 设置页眉 (head)
+%%/fancyhead[RE]{/leftmark}     % 在偶数页的右侧显示章名
+%%/fancyhead[LO]{/rightmark}    % 在奇数页的左侧显示小节名
+%%/fancyhead[LE,RO]{~/thepage~} % 在偶数页的左侧，奇数页的右侧显示页码
+%%
+%%% 设置页脚：在每页的右下脚以斜体显示书名
+%%/fancyfoot[RO,RE]{/it Typesetting with /LaTeX}
+%%
+%%/renewcommand{/headrulewidth}{0.7pt} % 页眉与正文之间的水平线粗细
+%%/renewcommand{/footrulewidth}{0pt}
+%%}
+%%
+%%/pagestyle{fancy}             % 选用 fancy style
+%%% 其余同 plain style
+%%/fancyhf{}                   
+%%/fancyhead[RE]{/leftmark}
+%%/fancyhead[LO]{/rightmark}
+%%/fancyhead[LE,RO]{~/thepage~}
+%%/fancyfoot[RO,RE]{/it Typesetting with /LaTeX}
+%%/renewcommand{/headrulewidth}{0.7pt}
+%%/renewcommand{/footrulewidth}{0pt}
+%%
+%%% 设置章名和节名的显示方式
+%%/renewcommand{/chaptermark}[1]{/markboth{~第~/thechapter~章~~~#1~}{}}
+%%/renewcommand{/sectionmark}[1]{/markright{~/thesection~~#1~}{}}
+%%\end{lstlisting}
+%%
+%%\paragraph{章节标题}~{}
+%%
+%%通常用titlesec宏包来设置正文中出现的章节标题的格式：
+%%
+%%/usepackage{titlesec}
+%%
+%%设置章名为右对齐，字号为/Huge，字型为黑体，章号用粗体，并设置间距：
+%%
+%%/titleformat{/chapter}{/flushright/Huge/hei}{{/bf /thechapter}}{0pt}{}
+%%
+%%/titlespacing{/chapter}{0pt}{-20pt}{25pt}
+%%
+%%设置节名的字号为/Large，字型为黑体，节号用粗体，并设置间距：
+%%
+%%/titleformat{/section}{/Large /hei}{{/bf /thesection/space}}{0pt}{}
+%%
+%%/titlespacing*{/section}{0pt}{1ex plus .3ex minus .2ex}{-.2ex plus .2ex}
+%%
+%%其中/hei的定义为：
+%%
+%%/newcommand{/hei}{/CJKfamily{hei}}
+%%
+%%\paragraph{纸张大小}~{}
+%%
+%%\begin{lstlisting}[language={matlab}]
+%%/documentclass[10pt, b5paper]{report}
+%%/usepackage[body={12.6cm, 20cm}, centering, dvipdfm]{geometry}
+%%% 以上将版心宽度设为 12.6cm，高度 20cm，版心居中，且自动设置PDF文件的纸张大小
+%%\end{lstlisting}
+%%
+%%\subsubsection{documentclass}
+%%
+%%latex 有三种文档类型(CTE 环境)：ctexart、ctexrep、ctexbook
+%%
+%%优先选用 ctexrep 文档类型，因为这个支持到 chapter，且\textcolor{red}{目录}后面不会添加一个空白页
+%%
+%%而 book 类型是要考虑印刷时的奇偶页问题，所以会在\textcolor{red}{目录}后面在不满足 chapter 所在页是奇数页时会添加一个空白页，
+%%这个是 book 规范设置
+%%

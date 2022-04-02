@@ -1,0 +1,87 @@
+
+\subsubsection{set color}
+
+\begin{enumerate}[topsep=0pt,itemsep=0pt,parsep=0pt,leftmargin=3.6em,label=\arabic*>]
+    \item \{\textbackslash color\{blue\}\{蓝色字\}\}：{\color{blue}{蓝色字}}
+    \item \textbackslash textcolor\{red\}\{红色字体\}：\textcolor{red}{红色字体}
+    \item \textbackslash colorbox\{yellow\}\{黄色盒子\}：\colorbox{yellow}{黄色盒子}
+    \vspace{-0.4em}
+    \item \textbackslash fcolorbox\{black\}\{green\}\{黑框绿色背景盒子\}：\fcolorbox{black}{green}{黑框绿色背景盒子}
+\end{enumerate}
+
+\begin{longtable}{cp{5em}|cp{5em}|cp{5em}|cp{5em}|cp{5em}|cp{5em}}
+    \hline
+    \colorbox{black}{\textcolor{black}{color}} & \multicolumn{1}{c|}{black} &
+    \colorbox{gray}{\textcolor{gray}{color}} & \multicolumn{1}{c|}{gray} &
+    \colorbox{olive}{\textcolor{olive}{color}} & \multicolumn{1}{c|}{olive} &
+    \colorbox{blue}{\textcolor{blue}{color}} & \multicolumn{1}{c|}{blue} &
+    \colorbox{green}{\textcolor{green}{color}} & \multicolumn{1}{c|}{green} &
+    \colorbox{teal}{\textcolor{teal}{color}} & \multicolumn{1}{c}{teal} \\
+    \hline
+    \colorbox{violet}{\textcolor{violet}{color}} & \multicolumn{1}{c|}{violet} &
+    \colorbox{brown}{\textcolor{brown}{color}} & \multicolumn{1}{c|}{brown} &
+    \colorbox{lightgray}{\textcolor{lightgray}{color}} & \multicolumn{1}{c|}{lightgray} &
+    \colorbox{pink}{\textcolor{pink}{color}} & \multicolumn{1}{c|}{pink} &
+    \colorbox{white}{\textcolor{white}{color}} & \multicolumn{1}{c|}{white} &
+    \colorbox{lime}{\textcolor{lime}{color}} & \multicolumn{1}{c}{lime} \\
+    \hline
+    \colorbox{purple}{\textcolor{purple}{color}} & \multicolumn{1}{c|}{purple} &
+    \colorbox{yellow}{\textcolor{yellow}{color}} & \multicolumn{1}{c|}{yellow} &
+    \colorbox{darkgray}{\textcolor{darkgray}{color}} & \multicolumn{1}{c|}{darkgray} &
+    \colorbox{magenta}{\textcolor{magenta}{color}} & \multicolumn{1}{c|}{magenta} &
+    \colorbox{red}{\textcolor{red}{color}} & \multicolumn{1}{c|}{red} &
+    \colorbox{orange}{\textcolor{orange}{color}} & \multicolumn{1}{c}{orange} \\
+    \hline
+    \colorbox{cyan}{\textcolor{cyan}{color}} & \multicolumn{1}{c|}{cyan} \\
+    \hline
+\end{longtable}
+
+\begin{longtable}{cp{6em}|cp{6em}|cp{6em}|cp{6em}|cp{6em}}
+    \hline
+    \colorbox{Yellow}{\textcolor{Yellow}{color}} & \multicolumn{1}{c|}{Yellow} &
+    \colorbox{GreenYellow}{\textcolor{GreenYellow}{color}} & \multicolumn{1}{c|}{GreenYellow} &
+    \colorbox{RubineRed}{\textcolor{RubineRed}{color}} & \multicolumn{1}{c|}{RubineRed} &
+    \colorbox{RoyalPurple}{\textcolor{RoyalPurple}{color}} & \multicolumn{1}{c|}{RoyalPurple} &
+    \colorbox{Emerald}{\textcolor{Emerald}{color}} & \multicolumn{1}{c}{Emerald} \\
+    \hline
+    \colorbox{WildStrawberry}{\textcolor{WildStrawberry}{color}} & \multicolumn{1}{c|}{WildStrawberry} &
+    \colorbox{BlueViolet}{\textcolor{BlueViolet}{color}} & \multicolumn{1}{c|}{BlueViolet} &
+    \colorbox{Emerald}{\textcolor{Emerald}{color}} & \multicolumn{1}{c}{Emerald} \\
+    \hline
+\end{longtable}
+
+\begin{enumerate}[topsep=0pt,itemsep=0pt,parsep=0pt,leftmargin=3.6em,label=\arabic*>]
+    \item \textbackslash columncolor：eg. \verb!\begin{tabular}{>{\columncolor{gray}}c >{\columncolor{red}}c}!
+    \item \textbackslash rowcolor：eg. \verb!\rowcolor{red} A & B & C \\!
+    \item \verb=\setlength{\arrayrulewidth}{0.19mm}=：设置表格横线与竖线的粗细，实验下来设置 0.19 mm 最好，
+        设置颜色时不会把线给遮挡了，而且线条显示也均匀 \par
+        可以把这个参数设置到\textcolor{red}{导言区}
+    \item \verb=\arrayrulecolor{green}= 用来设置表格线条为\textcolor{green}{绿色} \par
+        后面的表格如果想要恢复成黑色，需要再重新设置一下
+\end{enumerate}
+
+
+\arrayrulecolor{green}
+\begin{tabular}{|l|c|r|}
+    \arrayrulecolor{black}\hline
+    United Kingdom & London & Thames\\
+    \arrayrulecolor{blue}\hline
+    France & Paris & Seine \\
+    \arrayrulecolor{black}\cline{1-1}
+    \arrayrulecolor{red}\cline{2-3}
+    Russia & Moscow & Moskva \\ \hline
+\end{tabular}
+
+
+\arrayrulecolor{black}
+\begin{tabular}{|>{\columncolor{lime}[6pt][6pt]}c|l|l|r|c|}
+    \hline
+    数字 & 1 & 2 & 3 & \cellcolor{red}4 \\
+    \hline
+    英文 & one & two & three & four \\
+    \hline
+    \rowcolor{lightgray}[\tabcolsep][\tabcolsep] 汉文 & 一 & 二 & 三 & 四 \\
+    \hline
+\end{tabular}
+
+

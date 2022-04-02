@@ -1,0 +1,38 @@
+
+\subsubsection{define command and environment}
+
+\paragraph{define command}~{}
+
+使用 \verb=\newcommand<命令>[<参数个数>][<首参数默认值>]{<具体定义>}= 来定义一个新的命令
+\begin{enumerate}[topsep=0pt,itemsep=0pt,parsep=0pt,leftmargin=3.6em,label=\arabic*>]
+    \item 无参数定义：\par
+        \verb=\newcommand<命令>{<具体定义>}= 
+    \item 有参数定义：\par
+        参数编号使用\verb=#1、#2、#3、...、#9=
+\end{enumerate}
+
+以下是一些定义实例：
+
+\newcommand\PRCa{\emph{China}}
+\newcommand\PRCb{\textcolor{red}{\emph{China}}}
+\newcommand\PRCc[1]{\textcolor{blue}{\textcolor{red}{#1} country is \emph{China}}}
+\newcommand\PRCd[1][my]{\textcolor{blue}{\textcolor{red}{#1} country is \emph{China}}}
+
+\begin{enumerate}[topsep=0pt,itemsep=0pt,parsep=0pt,leftmargin=3.6em,label=\arabic*>]
+    \item \verb=\newcommand\PRCa{\emph{China}}= \par
+        \verb=\PRCa= $\Rightarrow$ \PRCa
+    \item \verb=\newcommand\PRCb{\textcolor{red}{\emph{China}}}= \par
+        \verb=\PRCb= $\Rightarrow$ \PRCb
+    \item \verb=\newcommand\PRCc[1]{\textcolor{blue}{\textcolor{red}{#1} country is \emph{China}}}= \par
+        \verb=\PRCc{my}= $\Rightarrow$ \PRCc{my}
+    \item \verb=\newcommand\PRCd[1][my]{\textcolor{blue}{\textcolor{red}{#1} country is \emph{China}}}= \par
+        \verb=\PRCd= $\Rightarrow$ \PRCd \par
+        \verb=\PRCd[your]= $\Rightarrow$ \PRCd[your] \par
+\end{enumerate}
+
+\paragraph{renew command}~{}
+
+使用 \verb=\renewcommand<命令>[<参数个数>][<首参数默认值>]{<具体定义>}= 来重定义命令
+
+\paragraph{new/renew environment}~{}
+
